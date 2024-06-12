@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .quiz-container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .option {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        <img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.edunet.net%2Fnedu%2Fcontsvc%2FviewWkstContPost.do%3Fcontents_id%3D225d8777-1961-4c5e-b4da-1503aea93950%26head_div%3D&psig=AOvVaw1Ot8Oau1xDbwT9vlXzTbs1&ust=1718276666833000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNj2rcT11YYDFQAAAAAdAAAAABAE" alt="Quiz Image" style="width: 100%; height: auto;">
+        <p>해식 퀴즈! 틀린걸 찾으세요</p>
+        <div class="options">
+            <div class="option" data-answer="1">1. 해식 작용은 바닷물이 육지를 침식하는 작용입니다.</div>
+            <div class="option" data-answer="2">2. 파도는 해식 작용에 중요한 역할을 합니다.</div>
+            <div class="option" data-answer="3">3. 조류는 해식 작용에 가장 중요한 역할을 합니다.</div>
+            <div class="option" data-answer="4">4. 해식 동굴은 파도에 의해 형성됩니다.</div>
+            <div class="option" data-answer="5">5. 해안 단구는 침식과 융기가 반복되어 만들어집니다.</div>
+        </div>
+        <div class="result">O</div>
+    </div>
+
+    <script>
+        const correctAnswer = 3; // Set the correct answer here
+        const options = document.querySelectorAll('.option');
+        const result = document.querySelector('.result');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                if (parseInt(option.getAttribute('data-answer')) === correctAnswer) {
+                    alert('Wrong answer. Try again!');
+                } else {
+                    result.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
